@@ -1,0 +1,39 @@
+{
+  "_from": "homebridge-weerlive",
+  "_id": "homebridge-weerlive@1.0.0",
+  "_inBundle": false,
+  "_location": "/homebridge-weerlive",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "homebridge-weerlive",
+    "name": "homebridge-weerlive",
+    "escapedName": "homebridge-weerlive",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_spec": "homebridge-weerlive",
+  "_where": "/home/pi",
+  "author": "OABsoftware",
+  "bundleDependencies": false,
+  "dependencies": {
+    "request": "2.75"
+  },
+  "deprecated": false,
+  "description": "Homebridge WeerLive",
+  "engines": {
+    "homebridge": ">=0.2.0",
+    "node": ">=0.12.0"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "weerlive"
+  ],
+  "name": "homebridge-weerlive",
+  "version": "1.0.0"
+}

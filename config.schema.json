@@ -1,0 +1,146 @@
+{
+  "pluginType": "platform",
+  "pluginAlias": "WeerLive",
+  "headerDisplay": "## WeerLive\n\n Definieer accessoires die als contactsensor verschijnen in je Home app en open gaan als het zonnig is.",
+  "singular": true,
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Naam",
+        "type": "string",
+        "default": "WeerLive",
+        "minLength": 1,
+        "required": true
+      },
+      "apikey": {
+        "title": "Jouw API key voor weerlive.nl",
+        "type": "string",
+        "default": "",
+        "minLength": 10,
+        "required": true
+      },
+      "latitude": {
+        "title": "Lengtegraad waarop je woning zich bevindt",
+        "type": "number",
+        "default": "0",
+        "minimum": 0,
+        "maximum": 180,
+        "required": true
+      },
+      "longitude": {
+        "title": "Breedtegraad waarop je woning zich bevindt",
+        "type": "number",
+        "default": "0",
+        "minimum": 0,
+        "maximum": 180,
+        "required": true
+      },
+      "sunshineImages": {
+        "title": "Image waarden voor zonnig weer",
+        "description": "bij een van deze waarden wordt het contact geopend",
+        "type": "string",
+        "default": "zonnig,lichtbewolkt,halfbewolkt",
+        "minLength": 1,
+        "required": true
+      },
+      "cloudedImages": {
+        "title": "Image waarden voor bewolkt weer",
+        "description": "bij een van deze waarden blijft het contact geopend, als het eerder al geopend was",
+        "type": "string",
+        "default": "bewolkt",
+        "minLength": 0,
+        "required": false
+      },
+      "sunriseOffset": {
+        "title": "Aantal minuten na zonsopkomst",
+        "description": "contacten gaat op z'n vroegst dit aantal minuten na zonsopkomst open",
+        "type": "number",
+        "default": "0",
+        "minimum": 0,
+        "maximum": 180,
+        "required": true
+      },
+      "sunsetOffset": {
+        "title": "Aantal minuten voor zonsondergang",
+        "description": "contacten gaan op z'n laatst dit aantal minuten voor zondsondergang dicht",
+        "type": "number",
+        "default": "0",
+        "minimum": 0,
+        "maximum": 180,
+        "required": true
+      },
+      "accessories": {
+        "title": "Accessoires",
+        "type": "array",
+        "required": true,
+        "items": {
+          "title": "Accessoire",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Naam van de contactsensor",
+              "type": "string",
+              "minLength": 1,
+              "required": true
+            },
+            "fromTime": {
+              "title": "Begintijdstip vanaf welke het contact geopend wordt bij zonnig weer",
+              "type": "string",
+              "default": "00:00",
+              "minLength": 5,
+              "required": true
+            },
+            "untilTime": {
+              "title": "Eindtijdstip tot welke het contact geopend blijft bij zonnig weer",
+              "type": "string",
+              "default": "00:00",
+              "minLength": 5,
+              "required": true
+            },
+            "sameHours": {
+              "title": "Minimum aantal uren waarin het achter elkaar zonnig moet zijn",
+              "type": "number",
+              "default": "1",
+              "minimum": 0,
+              "maximum": 12,
+              "required": true
+            },
+            "minSunPower": {
+              "title": "Minimale zonnekracht (in W/m2)",
+              "type": "number",
+              "default": "250",
+              "minimum": 0,
+              "maximum": 1000,
+              "required": true
+            },
+            "minTemperature": {
+              "title": "Minimale temperatuur (in graden Celsius)",
+              "type": "number",
+              "default": "18",
+              "minimum": -50,
+              "maximum": 50,
+              "required": true
+            },
+            "maxWind": {
+              "title": "Maximale windsterkte (in Beaufort)",
+              "type": "number",
+              "default": "3",
+              "minimum": 0,
+              "maximum": 15,
+              "required": true
+            },
+            "dontCloseOnWeather": {
+              "title": "Contactsensor wel openen maar niet sluiten o.b.v. weerinformatie",
+              "type": "boolean",
+              "default": "false",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "form": null,
+  "display": null
+}
